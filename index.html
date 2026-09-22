@@ -1,587 +1,1610 @@
- html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Luxembourg Careerlink SÀRL | Building Careers. Creating Futures.</title>
-
-    <meta name="description"
-          content="Explore employment opportunities across hospitality, construction, logistics, manufacturing, cleaning, transport, food production and other sectors.">
-
-    <meta name="theme-color" content="#071a33">
-
-    <style>
-        /* =========================================================
-           LUXEMBOURG CAREERLINK SÀRL
-           COMPLETE SINGLE-FILE WEBSITE
-           Navy + Gold Professional Theme
-           ========================================================= */
-
-        :root {
-            --navy: #071a33;
-            --navy-2: #0b2547;
-            --navy-3: #12365f;
-            --gold: #c9a227;
-            --gold-light: #e7cf72;
-            --white: #ffffff;
-            --cream: #faf8f1;
-            --light: #f4f6f9;
-            --text: #172033;
-            --muted: #667085;
-            --border: #e4e8ee;
-            --success: #197a52;
-            --danger: #b42318;
-            --shadow: 0 18px 50px rgba(7, 26, 51, 0.10);
-            --radius: 18px;
-            --container: 1180px;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            color: var(--text);
-            background: var(--white);
-            line-height: 1.65;
-        }
-
-        body.menu-open {
-            overflow: hidden;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        button,
-        input,
-        select,
-        textarea {
-            font: inherit;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-        .container {
-            width: min(92%, var(--container));
-            margin: auto;
-        }
-
-        /* =========================================================
-           TOP BAR
-           ========================================================= */
-
-        .topbar {
-            background: #041225;
-            color: #dfe7f1;
-            font-size: 13px;
-            padding: 8px 0;
-        }
-
-        .topbar-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .topbar-left,
-        .topbar-right {
-            display: flex;
-            gap: 18px;
-            align-items: center;
-        }
-
-        .topbar a:hover {
-            color: var(--gold-light);
-        }
-
-        /* =========================================================
-           HEADER
-           ========================================================= */
-
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(7, 26, 51, 0.97);
-            backdrop-filter: blur(14px);
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-        }
-
-        .nav {
-            min-height: 82px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 25px;
-        }
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 13px;
-            min-width: 230px;
-        }
-
-        .logo-mark {
-            width: 48px;
-            height: 48px;
-            border: 2px solid var(--gold);
-            color: var(--gold-light);
-            display: grid;
-            place-items: center;
-            font-weight: 900;
-            font-size: 17px;
-            letter-spacing: -1px;
-            border-radius: 11px;
-            background: rgba(201,162,39,0.08);
-        }
-
-        .brand-text strong {
-            color: white;
-            display: block;
-            font-size: 15px;
-            letter-spacing: .2px;
-        }
-
-        .brand-text span {
-            color: var(--gold-light);
-            display: block;
-            font-size: 11px;
-            margin-top: 1px;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .nav-links a {
-            color: #e9eef5;
-            font-size: 13px;
-            font-weight: 600;
-            transition: .25s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--gold-light);
-        }
-
-        .nav-apply {
-            background: var(--gold);
-            color: var(--navy) !important;
-            padding: 11px 18px;
-            border-radius: 8px;
-            font-weight: 800 !important;
-        }
-
-        .nav-apply:hover {
-            background: var(--gold-light);
-            transform: translateY(-1px);
-        }
-
-        .menu-toggle {
-            display: none;
-            border: 0;
-            background: transparent;
-            color: white;
-            font-size: 28px;
-            cursor: pointer;
-        }
-
-        /* =========================================================
-           HERO
-           ========================================================= */
-
-        .hero {
-            min-height: 690px;
-            position: relative;
-            overflow: hidden;
-            background:
-                linear-gradient(90deg,
-                    rgba(4,18,37,.97) 0%,
-                    rgba(4,18,37,.90) 38%,
-                    rgba(4,18,37,.52) 68%,
-                    rgba(4,18,37,.40) 100%),
-                url("https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1800&q=85")
-                center/cover no-repeat;
-            display: flex;
-            align-items: center;
-        }
-
-        .hero::after {
-            content: "";
-            position: absolute;
-            inset: auto 0 0;
-            height: 8px;
-            background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 730px;
-            color: white;
-            padding: 90px 0;
-        }
-
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 9px;
-            color: var(--gold-light);
-            font-weight: 800;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1.7px;
-            margin-bottom: 18px;
-        }
-
-        .eyebrow::before {
-            content: "";
-            width: 30px;
-            height: 2px;
-            background: var(--gold);
-        }
-
-        .hero h1 {
-            font-size: clamp(42px, 6vw, 72px);
-            line-height: 1.02;
-            letter-spacing: -2.5px;
-            margin-bottom: 24px;
-        }
-
-        .hero h1 span {
-            color: var(--gold-light);
-        }
-
-        .hero p {
-            max-width: 650px;
-            color: #e6ebf2;
-            font-size: 18px;
-            line-height: 1.75;
-            margin-bottom: 32px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 13px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            border: 0;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 9px;
-            padding: 14px 22px;
-            border-radius: 9px;
-            font-weight: 800;
-            transition: .25s ease;
-        }
-
-        .btn-primary {
-            background: var(--gold);
-            color: var(--navy);
-        }
-
-        .btn-primary:hover {
-            background: var(--gold-light);
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            color: white;
-            border: 1px solid rgba(255,255,255,.4);
-            background: rgba(255,255,255,.05);
-        }
-
-        .btn-outline:hover {
-            border-color: var(--gold);
-            color: var(--gold-light);
-        }
-
-        /* =========================================================
-           TRUST STRIP
-           ========================================================= */
-
-        .trust-strip {
-            background: var(--white);
-            box-shadow: 0 10px 35px rgba(0,0,0,.06);
-            position: relative;
-            z-index: 5;
-        }
-
-        .trust-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-        }
-
-        .trust-item {
-            padding: 25px 18px;
-            text-align: center;
-            border-right: 1px solid var(--border);
-        }
-
-        .trust-item:last-child {
-            border-right: 0;
-        }
-
-        .trust-item strong {
-            display: block;
-            color: var(--navy);
-            font-size: 15px;
-        }
-
-        .trust-item span {
-            display: block;
-            color: var(--muted);
-            font-size: 12px;
-            margin-top: 4px;
-        }
-
-        /* =========================================================
-           GENERAL SECTIONS
-           ========================================================= */
-
-        section {
-            padding: 95px 0;
-        }
-
-        .section-soft {
-            background: var(--light);
-        }
-
-        .section-cream {
-            background: var(--cream);
-        }
-
-        .section-heading {
-            max-width: 730px;
-            margin-bottom: 45px;
-        }
-
-        .section-heading.center {
-            margin-left: auto;
-            margin-right: auto;
-            text-align: center;
-        }
-
-        .section-heading .eyebrow {
-            color: var(--gold);
-        }
-
-        .section-heading h2 {
-            color: var(--navy);
-            font-size: clamp(31px, 4vw, 47px);
-            line-height: 1.1;
-            letter-spacing: -1.3px;
-            margin-bottom: 15px;
-        }
-
-        .section-heading p {
-            color: var(--muted);
-            font-size: 16px;
-        }
-
-        /* =========================================================
-           SEARCH
-           ========================================================= */
-
-        .search-box {
-            background: var(--navy);
-            padding: 30px;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            margin-top: -55px;
-            position: relative;
-            z-index: 10;
-        }
-
-        .search-title {
-            color: white;
-            font-size: 22px;
-            margin-bottom: 18px;
-        }
-
-        .search-grid {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr auto;
-            gap: 12px;
-        }
-
-        .search-field {
-            position: relative;
-        }
-
-        .search-field input,
-        .search-field select {
-            width: 100%;
-            height: 52px;
-            border: 1px solid rgba(255,255,255,.15);
-            border-radius: 8px;
-            padding: 0 15px;
-            background: #fff;
-            color: var(--text);
-            outline: none;
-        }
-
-        .search-button {
-            height: 52px;
-            padding: 0 22px;
-            border: 0;
-            border-radius: 8px;
-            background: var(--gold);
-            color: var(--navy);
-            font-weight: 900;
-            cursor: pointer;
-        }
-
-        /* =========================================================
-           CATEGORY CARDS
-           ========================================================= */
-
-        .category-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 17px;
-        }
-
-        .category-card {
-            background: white;
-            border: 1px solid var(--border);
-            padding: 25px;
-            border-radius: 14px;
-            transition: .25s ease;
-            cursor: pointer;
-        }
-
-        .category-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--gold);
-            box-shadow: var(--shadow);
-        }
-
-        .category-icon {
-            width: 46px;
-            height: 46px;
-            border-radius: 12px;
-            background: #f5f0dc;
-            display: grid;
-            place-items: center;
-            color: var(--navy);
-            font-size: 21px;
-            margin-bottom: 17px;
-        }
-
-        .category-card h3 {
-            color: var(--navy);
-            font-size: 17px;
-            margin-bottom: 8px;
-        }
-
-        .category-card p {
-            color: var(--muted);
-            font-size: 13px;
-            line-height: 1.6;
-        }
-
-        /* =========================================================
-           JOB CARDS
-           ========================================================= */
-
-        .jobs-toolbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 25px;
-            gap: 15px;
-        }
-
-        .result-count {
-            color: var(--muted);
-            font-size: 14px;
-        }
-
-        .jobs-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .job-card {
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 15px;
-            overflow: hidden;
-            transition: .25s ease;
-        }
-
-        .job-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow);
-        }
-
-        .job-top {
-            height: 155px;
-            position: relative;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .job-top::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, transparent, rgba(7,26,51,.72));
-        }
-
-        .job-category {
-            position: absolute;
-            z-index: 2;
-            left: 15px;
-            bottom: 14px;
-            color: white;
-            font-size: 11px;
-            font-weight: 800;
-            background: rgba(7,26,51,.85);
-            padding: 6px 10px;
-            border-radius: 5px;
-        }
-
-        .job-body {
-            padding: 22px;
-        }
-
-        .job-body h3 {
-            color: var(--navy);
-            font-size: 19px;
-            margin-bottom: 11px;
-        }
-
-        .job-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 15px;
-        }
-
-        .meta-pill {
-            background
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Luxembourg Careerlink SÀRL | International Careers</title>
+
+<meta name="description" content="Luxembourg Careerlink SÀRL - International employment opportunities, career information and relocation guidance.">
+
+<style>
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f7fb;
+  color: #18202a;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+.topbar {
+  background: #071b3a;
+  color: #ffffff;
+  padding: 9px 5%;
+  text-align: center;
+  font-size: 13px;
+}
+
+header {
+  background: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+}
+
+.navbar {
+  max-width: 1200px;
+  margin: auto;
+  padding: 15px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #071b3a;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.logo-mark {
+  width: 43px;
+  height: 43px;
+  border-radius: 10px;
+  background: linear-gradient(135deg,#0b3d91,#1681df);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.logo small {
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+nav a {
+  color: #27344a;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: #0b65c2;
+}
+
+.nav-button {
+  background: #0b65c2;
+  color: #ffffff !important;
+  padding: 10px 16px;
+  border-radius: 8px;
+}
+
+.menu-button {
+  display: none;
+  border: none;
+  background: #071b3a;
+  color: #ffffff;
+  padding: 9px 12px;
+  border-radius: 7px;
+  font-size: 20px;
+}
+
+.hero {
+  min-height: 610px;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(4,21,48,0.94),
+      rgba(4,21,48,0.65)
+    ),
+    url("https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1800&q=85")
+    center/cover;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+}
+
+.hero-content {
+  width: 1200px;
+  max-width: 90%;
+  margin: auto;
+  padding: 80px 0;
+}
+
+.hero-label {
+  display: inline-block;
+  background: rgba(255,255,255,0.14);
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 8px 14px;
+  border-radius: 30px;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  max-width: 760px;
+  font-size: clamp(38px,6vw,70px);
+  line-height: 1.05;
+  margin-bottom: 22px;
+}
+
+.hero p {
+  max-width: 680px;
+  font-size: 18px;
+  color: #e7edf7;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 13px 20px;
+  border-radius: 8px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: #1681df;
+  color: #ffffff;
+}
+
+.btn-light {
+  background: #ffffff;
+  color: #071b3a;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #0b65c2;
+  border: 1px solid #0b65c2;
+}
+
+.section {
+  padding: 80px 5%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section-heading {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 45px;
+}
+
+.section-heading span {
+  color: #0b65c2;
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.section-heading h2 {
+  color: #071b3a;
+  font-size: 38px;
+  margin: 10px 0;
+}
+
+.section-heading p {
+  color: #647084;
+}
+
+.stats {
+  background: #ffffff;
+  margin-top: -40px;
+  position: relative;
+  z-index: 5;
+  border-radius: 15px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  overflow: hidden;
+}
+
+.stat {
+  padding: 30px 20px;
+  text-align: center;
+  border-right: 1px solid #e7ebf1;
+}
+
+.stat:last-child {
+  border-right: none;
+}
+
+.stat strong {
+  display: block;
+  color: #0b65c2;
+  font-size: 31px;
+  margin-bottom: 5px;
+}
+
+.stat span {
+  color: #687386;
+  font-size: 14px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.about-image {
+  min-height: 430px;
+  border-radius: 18px;
+  background:
+    linear-gradient(
+      rgba(6,25,54,0.12),
+      rgba(6,25,54,0.2)
+    ),
+    url("https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1000&q=85")
+    center/cover;
+}
+
+.about-text h2 {
+  color: #071b3a;
+  font-size: 38px;
+  margin: 10px 0 18px;
+}
+
+.about-text p {
+  color: #606c7e;
+  margin-bottom: 18px;
+}
+
+.check-list {
+  list-style: none;
+  margin: 20px 0;
+}
+
+.check-list li {
+  margin: 12px 0;
+  font-weight: 600;
+}
+
+.check-list li::before {
+  content: "✓";
+  color: #0b65c2;
+  font-weight: 900;
+  margin-right: 10px;
+}
+
+.jobs-section {
+  background: #        <div class="search-area">
+
+          <div class="search-grid">
+
+            <input
+              id="jobSearch"
+              class="input"
+              type="search"
+              placeholder="Search job title..."
+              onkeyup="filterJobs()"
+            >
+
+            <select
+              id="jobCategory"
+              onchange="filterJobs()">
+
+              <option value="">All categories</option>
+
+              <option value="Hospitality">
+                Hospitality
+              </option>
+
+              <option value="Construction">
+                Construction
+              </option>
+
+              <option value="Security">
+                Security
+              </option>
+
+              <option value="Manufacturing">
+                Manufacturing
+              </option>
+
+              <option value="Transport">
+                Transport
+              </option>
+
+              <option value="Healthcare">
+                Healthcare
+              </option>
+
+              <option value="Administration">
+                Administration
+              </option>
+
+              <option value="Customer Service">
+                Customer Service
+              </option>
+
+              <option value="Cleaning">
+                Cleaning
+              </option>
+
+              <option value="Technical">
+                Technical
+              </option>
+
+            </select>
+
+            <button
+              class="btn btn-primary"
+              onclick="filterJobs()">
+              Search Jobs
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <div class="jobs-grid" id="jobsGrid">
+
+
+          <article
+            class="job-card"
+            data-category="Hospitality">
+
+            <span class="job-tag">
+              HOSPITALITY
+            </span>
+
+            <h3>
+              Hotel Worker
+            </h3>
+
+            <p>
+              Roles supporting hotel operations,
+              housekeeping, guest services and
+              general hospitality activities.
+            </p>
+
+            <div class="job-meta">
+
+              <span>
+                Full-time
+              </span>
+
+              <span>
+                Hospitality
+              </span>
+
+              <span>
+                International
+              </span>
+
+            </div>
+
+            <a
+              href="#apply"
+              class="btn btn-outline">
+              Apply
+            </a>
+
+          </article>
+
+
+          <article
+            class="job-card"
+            data-category="Hospitality">
+
+            <span class="job-tag">
+              HOSPITALITY
+            </span>
+
+            <h3>
+              Waiter / Waitress
+            </h3>
+
+            <p>
+              Restaurant service opportunities
+              involving customers, food service
+              and hospitality operations.
+            </p>
+
+            <div class="job-meta">
+
+              <span>
+                Full-time
+              </span>
+
+              <span>
+                Hospitality
+              </span>
+
+              <span>
+                Service
+              </span>
+
+            </div>
+
+            <a
+              href="#apply"
+              class="btn btn-outline">
+              Apply
+            </a>
+
+          </article>
+
+
+          <article
+            class="job-card"
+            data-category="Hospitality">
+
+            <span class="job-tag">
+              HOSPITALITY
+            </span>
+
+            <h3>
+              Housekeeping Worker
+            </h3>
+
+            <p>
+              Hotel and accommodation support
+              including room preparation,
+              cleaning and general housekeeping.
+            </p>
+
+            <div class="job-meta">
+
+              <span>
+                Full-time
+              </span>
+
+              <span>
+                Cleaning
+              </span>
+
+              <span>
+                Hospitality
+              </span>
+
+            </div>
+
+            <a
+              href="#apply"
+              class="btn btn-outline">
+              Apply
+            </a>
+
+          </article>
+
+
+          <article
+            class="job-card"
+            data-category="Construction">
+
+            <span class="job-tag">
+              CONSTRUCTION
+            </span>
+
+            <h3>
+              Construction Worker
+            </h3>
+
+            <p>
+              General construction support,
+              site assistance and building-related
+              work.
+            </p>
+
+            <div class="job-meta">
+
+              <span>
+                Full-time
+              </span>
+
+              <span>
+                Construction
+              </span>
+
+              <span>
+                Skilled / General
+              </span>
+
+            </div>
+
+            <a
+              href="#apply"
+              class="btn btn-outline">
+              Apply
+            </a>
+
+          </article>
+
+
+          <article
+            class="job-card"
+            data-category="Security">
+
+            <span class="job-tag">
+              SECURITY
+            </span>
+
+            <h3>
+              Security Worker
+            </h3>
+
+            <p>
+              Security support roles involving
+              site monitoring, access control and
+              general safety procedures.
+            </p>
+
+            <div class="job-meta">
+
+              <span>
+                Full-time
+              </span>
+
+              <span>
+                Security
+              </span>
+
+              <span>
+                Site Work
+              </span>
+
+            </div>
+
+            <a
+              href="#apply"
+              class="btn btn-outline">
+              Apply
+            </a>
+
+          </article>
+
+
+          <article
+            class="job-card"
+            data-category="Manufacturing">
+
+            <span class="job-tag">
+              MANUFACTURING
+            </span>
+
+            <h3>
+              Factory Worker
+            </h3>
+
+            <p>
+              Manufacturing and production support
+              roles including general factory
+              operations and packaging.
+            </p>
+
+            <div class="job-meta">
+
+              <span>
+                Full-time
+              </span>
+
+              <span>
+                Manufacturing
+              </span>
+
+              <span>
+                Production
+              </span>
+
+            </div>
+
+            <a
+              href="#apply"
+              class="btn btn-outline">
+              Apply
+            </a>
+
+          </article>
+
+
+          <article
+            class="job-card"
+            data-category="Manufacturing">
+
+            <span class="job-tag">
+              MANUFACTURING
+            </span>
+
+            <h3>
+              Storekeeper
+            </h3>
+
+            <p>
+              Warehouse and stock support involving
+              inventory handling, organization and
+              basic records.
+            </p>
+
+            <div class="job-meta">
+
+              <span>
+                Full-time
+              </span>
+
+              <span>
+                Warehouse
+              </span>
+
+              <span>
+                Inventory
+              </span>
+
+            </div>
+
+            <a
+              href="#apply"
+              class="btn btn-outline">
+              Apply
+            </a>
+
+          </article>
+
+
+          <article
+            class="job-card"
+            data-category="Transport">
+
+            <span class="job-tag">
+              TRANSPORT
+            </span>
+
+            <h3>
+              Driver
+            </h3>
+
+            <p>
+              Driving and transport support
+              opportunities subject to the required
+              license and employer requirements.
+            </p>
+
+            <div class="job-meta">
+
+              <span>
+                Full-time
+              </span>
+
+              <span>
+                Transport
+              </span>
+
+              <span>
+                Driving
+              </span>
+
+            </div>
+
+            <a
+              href="#apply"
+              class="btn btn-outline">
+              Apply
+            </a>
+
+          </article>
+
+
+          <article
+            class="job-card"
+            data-category="Cleaning">
+
+            <span class="job-tag">
+              CLEANING
+            </span>
+
+            <h3>
+              Cleaner
+            </h3>
+
+            <p>
+              Cleaning and facility-support
+              opportunities in accommodation,
+              commercial and other work environments.
+            </p>
+
+            <div class="job-meta">
+
+              <span>
+                Full-time
+              </span>
+
+              <span>
+                Cleaning
+              </span>
+
+              <span>
+                Support
+              </span>
+
+            </div>
+
+            <a
+              href="#apply"
+              class="btn btn-outline">
+              Apply
+            </a>
+
+          </article>
+
+
+          <article
+            class="job-card"
+            data-category="Administration">
+
+            <span class="job-tag">
+              ADMINISTRATION
+            </span>
+
+            <h3>
+              Office Administrator
+            </h3>
+
+            <p>
+              Administrative support involving
+              documentation, communication and
+              general office activities.
+            </p>
+
+            <div class="job-meta">
+
+              <span>
+                Full-time
+              </span>
+
+              <span>
+                Administration
+              </span>
+
+              <span>
+                Office
+              </span>
+
+            </div>
+
+            <a
+              href="#apply"
+              class="btn btn-outline">
+              Apply
+            </a>
+
+          </article>
+
+
+          <article
+            class="job-card"
+            data-category="Customer Service">
+
+            <span class="job-tag">
+              CUSTOMER SERVICE
+            </span>
+
+            <h3>
+              Customer Service Worker
+            </h3>
+
+            <p>
+              Customer-facing roles involving
+              communication, assistance and
+              day-to-day service support.
+            </p>
+
+            <div class="job-meta">
+
+              <span>
+                Full-time
+              </span>
+
+              <span>
+                Customer Service
+              </span>
+
+              <span>
+                Communication
+              </span>
+
+            </div>
+
+            <a
+              href="#apply"
+              class="btn btn-outline">
+              Apply
+            </a>
+
+          </article>
+
+
+          <article
+            class="job-card"
+            data-category="Technical">
+
+            <span class="job-tag">
+              TECHNICAL
+            </span>
+
+            <h3>
+              Technical Worker
+            </h3>
+
+            <p>
+              Technical support opportunities
+              depending on qualifications,
+              experience and employer requirements.
+            </p>
+
+            <div class="job-meta">
+
+              <span>
+                Full-time
+              </span>
+
+              <span>
+                Technical
+              </span>
+
+              <span>
+                Skilled
+              </span>
+
+            </div>
+
+            <a
+              href="#apply"
+              class="btn btn-outline">
+              Apply
+            </a>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>      <!-- CAREER CATEGORIES -->
+
+      <section class="section" id="categories">
+
+        <div class="container">
+
+          <div class="section-heading">
+
+            <span>CAREER CATEGORIES</span>
+
+            <h2>
+              Opportunities across different industries
+            </h2>
+
+            <p>
+              Explore employment areas that may match your
+              professional background, practical experience
+              or transferable skills.
+            </p>
+
+          </div>
+
+
+          <div class="category-grid">
+
+
+            <div class="category-card">
+
+              <div class="category-icon">
+                🏨
+              </div>
+
+              <h3>
+                Hospitality
+              </h3>
+
+              <p>
+                Hotel, restaurant, housekeeping and guest
+                service opportunities.
+              </p>
+
+              <a href="#jobs">
+                Explore Jobs →
+              </a>
+
+            </div>
+
+
+            <div class="category-card">
+
+              <div class="category-icon">
+                🏗️
+              </div>
+
+              <h3>
+                Construction
+              </h3>
+
+              <p>
+                Building, site support, maintenance and
+                general construction positions.
+              </p>
+
+              <a href="#jobs">
+                Explore Jobs →
+              </a>
+
+            </div>
+
+
+            <div class="category-card">
+
+              <div class="category-icon">
+                🏭
+              </div>
+
+              <h3>
+                Manufacturing
+              </h3>
+
+              <p>
+                Production, factory, warehouse and
+                inventory-related opportunities.
+              </p>
+
+              <a href="#jobs">
+                Explore Jobs →
+              </a>
+
+            </div>
+
+
+            <div class="category-card">
+
+              <div class="category-icon">
+                🛡️
+              </div>
+
+              <h3>
+                Security
+              </h3>
+
+              <p>
+                Security support, access control and
+                site-monitoring positions.
+              </p>
+
+              <a href="#jobs">
+                Explore Jobs →
+              </a>
+
+            </div>
+
+
+            <div class="category-card">
+
+              <div class="category-icon">
+                🚚
+              </div>
+
+              <h3>
+                Transport
+              </h3>
+
+              <p>
+                Driving, logistics and transport support
+                opportunities.
+              </p>
+
+              <a href="#jobs">
+                Explore Jobs →
+              </a>
+
+            </div>
+
+
+            <div class="category-card">
+
+              <div class="category-icon">
+                🧹
+              </div>
+
+              <h3>
+                Cleaning
+              </h3>
+
+              <p>
+                Facility, commercial, accommodation and
+                general cleaning positions.
+              </p>
+
+              <a href="#jobs">
+                Explore Jobs →
+              </a>
+
+            </div>
+
+
+            <div class="category-card">
+
+              <div class="category-icon">
+                💻
+              </div>
+
+              <h3>
+                Administration
+              </h3>
+
+              <p>
+                Office administration, documentation and
+                organizational support.
+              </p>
+
+              <a href="#jobs">
+                Explore Jobs →
+              </a>
+
+            </div>
+
+
+            <div class="category-card">
+
+              <div class="category-icon">
+                📞
+              </div>
+
+              <h3>
+                Customer Service
+              </h3>
+
+              <p>
+                Communication, customer support and
+                service-related opportunities.
+              </p>
+
+              <a href="#jobs">
+                Explore Jobs →
+              </a>
+
+            </div>
+
+
+            <div class="category-card">
+
+              <div class="category-icon">
+                🔧
+              </div>
+
+              <h3>
+                Technical
+              </h3>
+
+              <p>
+                Skilled technical, maintenance and
+                equipment-support positions.
+              </p>
+
+              <a href="#jobs">
+                Explore Jobs →
+              </a>
+
+            </div>
+
+
+            <div class="category-card">
+
+              <div class="category-icon">
+                🏥
+              </div>
+
+              <h3>
+                Healthcare Support
+              </h3>
+
+              <p>
+                Healthcare support opportunities subject
+                to qualifications and employer requirements.
+              </p>
+
+              <a href="#jobs">
+                Explore Jobs →
+              </a>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- APPLICATION PROCESS -->
+
+      <section class="section process-section" id="process">
+
+        <div class="container">
+
+          <div class="section-heading">
+
+            <span>APPLICATION PROCESS</span>
+
+            <h2>
+              A clear path from application to employment
+            </h2>
+
+            <p>
+              The exact process depends on the position,
+              employer, candidate qualifications and
+              applicable immigration requirements.
+            </p>
+
+          </div>
+
+
+          <div class="process-grid">
+
+
+            <div class="process-card">
+
+              <div class="process-number">
+                01
+              </div>
+
+              <h3>
+                Submit Your Application
+              </h3>
+
+              <p>
+                Complete the application form and provide
+                accurate information about your experience,
+                qualifications and preferred career area.
+              </p>
+
+            </div>
+
+
+            <div class="process-card">
+
+              <div class="process-number">
+                02
+              </div>
+
+              <h3>
+                Application Review
+              </h3>
+
+              <p>
+                Your information can be reviewed against
+                available opportunities and relevant
+                employer requirements.
+              </p>
+
+            </div>
+
+
+            <div class="process-card">
+
+              <div class="process-number">
+                03
+              </div>
+
+              <h3>
+                Employer Consideration
+              </h3>
+
+              <p>
+                Where applicable, candidate information may
+                be considered for a suitable position by the
+                relevant employer.
+              </p>
+
+            </div>
+
+
+            <div class="process-card">
+
+              <div class="process-number">
+                04
+              </div>
+
+              <h3>
+                Employment Documentation
+              </h3>
+
+              <p>
+                Successful candidates receive the relevant
+                employment information and documentation
+                according to the employer's process.
+              </p>
+
+            </div>
+
+
+            <div class="process-card">
+
+              <div class="process-number">
+                05
+              </div>
+
+              <h3>
+                Immigration Requirements
+              </h3>
+
+              <p>
+                Candidates who require authorization to work
+                must follow the applicable immigration and
+                visa procedures.
+              </p>
+
+            </div>
+
+
+            <div class="process-card">
+
+              <div class="process-number">
+                06
+              </div>
+
+              <h3>
+                Relocation Planning
+              </h3>
+
+              <p>
+                Travel and relocation arrangements can be
+                planned according to the employment terms,
+                authorization status and employer instructions.
+              </p>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- INTERNATIONAL OPPORTUNITIES -->
+
+      <section class="section countries-section" id="countries">
+
+        <div class="container">
+
+          <div class="section-heading">
+
+            <span>INTERNATIONAL OPPORTUNITIES</span>
+
+            <h2>
+              Supporting applicants from different countries
+            </h2>
+
+            <p>
+              Applicants may come from different regions.
+              Requirements can vary depending on nationality,
+              residence status, occupation and destination.
+            </p>
+
+          </div>
+
+
+          <div class="country-grid">
+
+
+            <div class="country-card">
+
+              <div class="country-flag">
+                🇰🇪
+              </div>
+
+              <h3>
+                Kenya
+              </h3>
+
+              <p>
+                Employment information and application
+                guidance for candidates based in Kenya.
+              </p>
+
+              <a href="#apply">
+                Start Application
+              </a>
+
+            </div>
+
+
+            <div class="country-card">
+
+              <div class="country-flag">
+                🇳🇬
+              </div>
+
+              <h3>
+                Nigeria
+              </h3>
+
+              <p>
+                Opportunities and application information
+                for eligible Nigerian candidates.
+              </p>
+
+              <a href="#apply">
+                Start Application
+              </a>
+
+            </div>
+
+
+            <div class="country-card">
+
+              <div class="country-flag">
+                🇬🇭
+              </div>
+
+              <h3>
+                Ghana
+              </h3>
+
+              <p>
+                Career information for applicants interested
+                in international employment opportunities.
+              </p>
+
+              <a href="#apply">
+                Start Application
+              </a>
+
+            </div>
+
+
+            <div class="country-card">
+
+              <div class="country-flag">
+                🇿🇼
+              </div>
+
+              <h3>
+                Zimbabwe
+              </h3>
+
+              <p>
+                Application guidance for candidates
+                exploring international career opportunities.
+              </p>
+
+              <a href="#apply">
+                Start Application
+              </a>
+
+            </div>
+
+
+            <div class="country-card">
+
+              <div class="country-flag">
+                🇺🇬
+              </div>
+
+              <h3>
+                Uganda
+              </h3>
+
+              <p>
+                Employment information and general application
+                guidance for eligible candidates.
+              </p>
+
+              <a href="#apply">
+                Start Application
+              </a>
+
+            </div>
+
+
+            <div class="country-card">
+
+              <div class="country-flag">
+                🇹🇿
+              </div>
+
+              <h3>
+                Tanzania
+              </h3>
+
+              <p>
+                International career information for
+                qualified applicants.
+              </p>
+
+              <a href="#apply">
+                Start Application
+              </a>
+
+            </div>
+
+
+            <div class="country-card">
+
+              <div class="country-flag">
+                🇿🇲
+              </div>
+
+              <h3>
+                Zambia
+              </h3>
+
+              <p>
+                Explore available employment information
+                and application requirements.
+              </p>
+
+              <a href="#apply">
+                Start Application
+              </a>
+
+            </div>
+
+
+            <div class="country-card">
+
+              <div class="country-flag">
+                🌍
+              </div>
+
+              <h3>
+                Other Countries
+              </h3>
+
+              <p>
+                Applicants from other countries may also
+                contact us to discuss available opportunities.
+              </p>
+
+              <a href="#contact">
+                Contact Us
+              </a>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- RELOCATION -->
+
+      <section class="section relocation-section">
+
+        <div class="container">
+
+          <div class="relocation-box">
+
+            <div class="relocation-content">
+
+              <span>
+                RELOCATION INFORMATION
+              </span>
+
+              <h2>
+                Prepare for your international career journey
+              </h2>
+
+              <p>
+                Relocating for employment involves more than
+                receiving a job offer. Candidates should
+                understand employment conditions, immigration
+                requirements, travel arrangements and their
+                responsibilities before making plans.
+              </p>
+
+              <div class="relocation-points">
+
+                <div>
+                  <strong>
+                    Employment
+                  </strong>
+
+                  <p>
+                    Review your position, working hours,
+                    salary and employment conditions.
+                  </p>
+                </div>
+
+
+                <div>
+                  <strong>
+                    Documentation
+                  </strong>
+
+                  <p>
+                    Keep passports, qualifications and other
+                    required documents ready.
+                  </p>
+                </div>
+
+
+                <div>
+                  <strong>
+                    Immigration
+                  </strong>
+
+                  <p>
+                    Follow the official visa and work
+                    authorization requirements that apply to you.
+                  </p>
+                </div>
+
+
+                <div>
+                  <strong>
+                    Travel
+                  </strong>
+
+                  <p>
+                    Travel arrangements should be made only
+                    after the applicable requirements are satisfied.
+                  </p>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
